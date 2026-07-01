@@ -1,6 +1,8 @@
 # LBD OBJ Exporter
 
-LBD OBJ Exporter is a small Python desktop application for selecting an LBD Turtle file, querying it with SPARQL, previewing the merged geometry, and exporting all geometry returned by the query to one merged Wavefront OBJ file.
+LBD OBJ Exporter is a small Python desktop application for selecting an LBD Turtle file, querying it with SPARQL, previewing the merged geometry, and exporting all geometry returned by the query into a single merged Wavefront OBJ file.
+<img src="Screen.png" alt="LBD OBJ Exporter screenshot" width="400">
+
 
 It expects geometry literals in the IFCtoLBD/FoG form:
 
@@ -12,7 +14,7 @@ OPTIONAL { ?element <https://lbd.org/#asMTL_kd> ?elementKd }
 BIND(COALESCE(?geometryKd, ?elementKd) AS ?kd)
 ```
 
-The `?obj` value must be a base64 encoded OBJ literal, as produced by the geometry-enabled IFCtoLBD conversion examples.
+The `?obj` value must be a base64-encoded OBJ literal, as produced by the geometry-enabled IFCtoLBD conversion examples.
 
 ## Requirements
 
@@ -46,15 +48,15 @@ PYTHONPATH=LBD_OBJ_Exporter LBD_OBJ_Exporter/.venv/bin/python -m lbd_obj_exporte
 
 ## Use
 
-1. Click **Open Turtle** and select an `.ttl` file.
+1. Click **Open Turtle** and select a `.ttl` file.
 2. Edit the example SPARQL query if needed.
 3. Click **Run Query**.
-4. Inspect the shaded 3D OBJ preview in the right side of the result area.
+4. Inspect the shaded 3D OBJ preview on the right side of the result area.
 5. Click **Export Merged OBJ** and choose the output `.obj` file.
 
-All OBJ fragments in the query results are merged into one file and face indices are adjusted. Duplicate geometry rows for the same element are skipped, which is useful when a query returns one row per RDF type.
+All OBJ fragments in the query results are merged into one file, and face indices are adjusted. Duplicate geometry rows for the same element are skipped, which is useful when a query returns one row per RDF type.
 
-The preview is rendered with PyVista/VTK through a Qt widget. It uses a slightly transparent two-sided material and disables mesh-edge display. If the query result has a `kd` binding from `<https://lbd.org/#asMTL_kd>`, that diffuse color is used for the element. The default query accepts the color from either the geometry node or the element node. Missing or invalid colors fall back to the default material.
+The preview is rendered with PyVista/VTK through a Qt widget. It uses a slightly transparent two-sided material and disables mesh-edge display. If the query result has a `kd` binding from `<https://lbd.org/#asMTL_kd>`, that diffuse colour is used for the element. The default query accepts the color from either the geometry node or the element node. Missing or invalid colors fall back to the default material.
 
 Viewer actions:
 
