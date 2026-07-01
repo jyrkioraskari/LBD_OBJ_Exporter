@@ -1,6 +1,7 @@
 # LBD OBJ Exporter
 
 LBD OBJ Exporter is a small Python desktop application for selecting an LBD Turtle file, querying it with SPARQL, previewing the merged geometry, and exporting all geometry returned by the query into a single merged Wavefront OBJ file.
+
 <img src="Screen.png" alt="LBD OBJ Exporter screenshot" width="400">
 
 
