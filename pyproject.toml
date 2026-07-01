@@ -1,0 +1,18 @@
+[project]
+name = "lbd-obj-exporter"
+version = "0.1.0"
+description = "Desktop SPARQL query and OBJ geometry exporter for LBD Turtle files"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pyvista",
+    "pyvistaqt",
+    "pyside6",
+    "rdflib>=7.0",
+]
+
+[project.scripts]
+lbd-obj-exporter = "lbd_obj_exporter.app:main"
+
+[tool.setuptools.packages.find]
+include = ["lbd_obj_exporter*"]

@@ -1,0 +1,18 @@
+@prefix ex: <https://example.org/lbd/> .
+@prefix fog: <https://w3id.org/fog#> .
+@prefix omg: <https://w3id.org/omg#> .
+@prefix bot: <https://w3id.org/bot#> .
+
+ex:wall_1 a bot:Element ;
+    omg:hasGeometry ex:wall_1_geometry .
+
+ex:wall_1_geometry fog:asObj_v3.0-obj "diAwCnYgMCAwIDAKdiAxIDAgMAp2IDAgMSAwCmYgMSAyIDMK" .
+ex:wall_1_geometry <https://lbd.org/#asMTL_kd> "#d08a52" .
+ex:wall_1_geometry <https://lbd.org/#asMTL_alpha> "1.0" .
+
+ex:wall_2 a bot:Element ;
+    omg:hasGeometry ex:wall_2_geometry .
+
+ex:wall_2_geometry fog:asObj_v3.0-obj "diAxIDAgMAp2IDEgMSAwCnYgMCAxIDAKZiAxIDIgMwo=" .
+ex:wall_2_geometry <https://lbd.org/#asMTL_kd> "#5a9ec7" .
+ex:wall_2_geometry <https://lbd.org/#asMTL_alpha> "0.85" .
